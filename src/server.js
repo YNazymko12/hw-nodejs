@@ -1,6 +1,7 @@
 import express from 'express';
 import cors from 'cors';
 
+import authRouter from './routers/auth.js';
 import contactsRouter from './routers/contacts.js';
 import { getEnvVar } from './utils/getEnvVar.js';
 import { errorHandler } from './middlewares/errorHandler.js';
@@ -14,12 +15,12 @@ export const setupServer = () => {
   app.use(express.json());
   app.use(logger);
 
-  app.get('/', (req, res) => {
-    res.json({
-      message: 'My contacts',
-    });
-  });
-
+  // app.get('/', (req, res) => {
+  //   res.json({
+  //     message: 'My contacts',
+  //   });
+  // });
+  app.use('/auth', authRouter);
   app.use(contactsRouter);
   app.use('*', notFoundHandler);
 
