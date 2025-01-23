@@ -218,8 +218,7 @@
                 "required": [
                   "name",
                   "phoneNumber",
-                  "contactType",
-                  "userId"
+                  "contactType"
                 ],
                 "properties": {
                   "name": {
@@ -250,11 +249,6 @@
                       "home",
                       "personal"
                     ]
-                  },
-                  "userId": {
-                    "description": "ID of the user creating the contact",
-                    "type": "string",
-                    "example": "6784f20781b7207ef59e50f9"
                   },
                   "photo": {
                     "description": "Contact's photo",
